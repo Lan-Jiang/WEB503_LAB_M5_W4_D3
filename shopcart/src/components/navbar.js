@@ -36,6 +36,9 @@ function NavBar(props) {
                         <DisplayProducts 
                             products={props.prods}
                             OnQuantityChange={props.handleQuantityChange}
+                            OnSort={props.handleSort}
+                            sortType={props.sortType}
+                            listNum={props.listNum}
                         />}
                 >
 

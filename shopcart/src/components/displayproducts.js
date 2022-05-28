@@ -18,12 +18,23 @@ function DisplayProducts(props) {
     const handleClose = () => {
     setShow(false);
     };
+    // console.log(props.products);
 
     return (     
     <div>
+    <div className="container col-lg-10 my-5 mx-auto">
+      <label>
+            Sort Price By: 
+        <select onChange={(e) => props.OnSort(props.products, e.target.value)}>
+              <option value="norm">Normal</option>
+              <option value="asc">Lowest</option>
+              <option value="desc" >Highest</option>
+        </select>
+      </label>
+    </div>
     {props.products.map(product => (
     <div key={product.id} className='border px-4 py-2 p-3'>       
-                <h4 className='col-lg-3 text-left'>{product.desc}</h4>
+                <h4 className='col-lg-3 text-left'>{product.desc} ${product.price}</h4>
                 <div className='d-block d-flex align-items-center col-sm-6'>
                     <img src={product.image} alt={product.desc} width="150" 
                         onClick={() => handleShow(product)}/>

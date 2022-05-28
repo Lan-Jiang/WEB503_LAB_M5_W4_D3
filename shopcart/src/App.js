@@ -11,6 +11,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      sortType: "norm",
+      listNum: "",
       products: products
     };
   }
@@ -25,6 +27,19 @@ class App extends Component {
     }
   };
 
+  handleSort = (listNum, sortType) => {
+    listNum.sort((a, b) => {
+      switch(sortType) {
+        case "norm": return a.id - b.id
+          break;
+        case "asc": return a.price - b.price
+          break;
+        case "desc": return b.price - a.price
+      }
+    });
+    this.setState({ sortType });
+  };
+
   render() {
     return (
       <div className='App text-secondary'>
@@ -34,6 +49,9 @@ class App extends Component {
                 }
           prods={this.state.products}
           handleQuantityChange={this.handleQuantityChange}
+          handleSort={this.handleSort}
+          sortType={this.state.sortType}
+          listNum={this.state.listNum}
         />
       </div>
     );

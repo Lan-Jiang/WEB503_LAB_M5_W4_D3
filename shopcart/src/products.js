@@ -4,28 +4,32 @@ export const products = [
       desc: 'Unisex Cologne',
       value: 0,
       image: './products/cologne.jpg',
-      rating: 3.5
+      rating: 3.5,
+      price: 35,
     },
     {
       id: '2',
       desc: 'Apple iWatch',
       value: 0,
       image: './products/iwatch.jpg',
-      rating: 4.5
+      rating: 4.5,
+      price: 199,
     },
     {
       id: '3',
       desc: 'Unique Mug',
       value: 0,
       image: './products/mug.jpg',
-      rating: 4
+      rating: 4,
+      price: 15,
     },
     {
       id: '4',
       desc: 'Mens Wallet',
       value: 0,
       image: './products/wallet.jpg',
-      rating: 3
+      rating: 3,
+      price: 48,
     },
   ]
 
