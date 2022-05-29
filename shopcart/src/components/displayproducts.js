@@ -33,8 +33,11 @@ function DisplayProducts(props) {
       </label>
     </div>
     {props.products.map(product => (
-    <div key={product.id} className='border px-4 py-2 p-3'>       
-                <h4 className='col-lg-3 text-left'>{product.desc} ${product.price}</h4>
+    <div key={product.id} className='border px-4 py-2 p-3'>    
+                <div className="d-block col-lg-3 text-left">
+                  <h4 className='d-inline col-lg-3 '>{product.desc}</h4> 
+                  <h4 className="d-inline col-lg-3 text-danger">${product.price}</h4>
+                </div>    
                 <div className='d-block d-flex align-items-center col-sm-6'>
                     <img src={product.image} alt={product.desc} width="150" 
                         onClick={() => handleShow(product)}/>
